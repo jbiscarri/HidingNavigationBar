@@ -150,7 +150,7 @@ class HidingViewController {
 	}
     
     func expandAnimated() {
-        UIView.animate(withDuration: 0.3) { [weak self] in
+        UIView.animate(withDuration: 0.2) { [weak self] in
             self?.view.isHidden = false
             
             if (self?.alphaFadeEnabled)! {
