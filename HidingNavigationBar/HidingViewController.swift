@@ -148,6 +148,18 @@ class HidingViewController {
 		
 		return amountToMove;
 	}
+    
+    func expandAnimated() {
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            self?.view.isHidden = false
+            
+            if (self?.alphaFadeEnabled)! {
+                self?.updateSubviewsToAlpha(1)
+                self?.navSubviews = nil
+            }
+            self?.view.center = (self?.expandedCenterValue())!
+        }
+    }
 	
 	func contract() -> CGFloat {
 		if alphaFadeEnabled {

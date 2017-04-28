@@ -202,6 +202,14 @@ open class HidingNavigationBarManager: NSObject, UIScrollViewDelegate, UIGesture
 		
 		handleScrolling()
 	}
+    
+    open func expandNavigationBarAnimated() {
+        _ = navBarController.expandAnimated()
+        
+        previousYOffset = CGFloat.nan
+        
+        handleScrolling()
+    }
 	
 	//MARK: NSNotification
 	
